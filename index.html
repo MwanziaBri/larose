@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <!-- Allow zoom but restrict it -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5" />
+    
+    <title>La Roza Nature Resort | Luxury Eco-Resort in Tropical Paradise</title>
+    <meta name="description" content="Experience luxury in harmony with nature at La Roza Nature Resort. Wooden lodges, farm-to-table dining, and pristine tropical forest views await at our Masaka City resort." />
+    <meta name="keywords" content="La Roza Nature Resort, luxury resort, eco-resort, Masaka Uganda, nature lodge, forest retreat, tropical vacation, sustainable travel, Uganda tourism" />
+    <link rel="canonical" href="https://larozanatureresort.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="La Roza Nature Resort | Luxury Eco-Resort" />
+    <meta property="og:description" content="Experience luxury in harmony with nature. Wooden lodges, farm-to-table dining, and pristine tropical forest views at our Masaka resort." />
+    <meta property="og:url" content="https://larozanatureresort.com" />
+    <meta property="og:site_name" content="La Roza Nature Resort" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="La Roza Nature Resort | Luxury Eco-Resort" />
+    <meta name="twitter:description" content="Experience luxury in harmony with nature. Wooden lodges, farm-to-table dining, and pristine tropical forest views at our Masaka resort." />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="La Roza Nature Resort" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="UG-MA" />
+    <meta name="geo.placename" content="Masaka" />
+    <meta name="geo.position" content="-0.3333;31.7333" />
+    <meta name="ICBM" content="-0.3333, 31.7333" />
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "La Roza Nature Resort",
+      "description": "Luxury eco-resort offering wooden lodges, farm-to-table dining, and pristine tropical forest views in Masaka, Uganda.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Transformer Lane, Senyange Hill",
+        "addressLocality": "Masaka City",
+        "addressCountry": "Uganda"
+      },
+      "telephone": "+256779424477",
+      "email": "booking@larozanatureresort.com",
+      "url": "https://larozanatureresort.com",
+      "priceRange": "$$$",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4.8"
+      },
+      "amenityFeature": [
+        "FreeWiFi",
+        "SwimmingPool",
+        "Restaurant",
+        "Spa",
+        "Parking",
+        "EcoFriendly"
+      ]
+    }
+    </script>
+    
+    <!-- Better CSS to prevent zoom but allow scrolling -->
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      /* Allow pinch zoom but with limits */
+      @media screen and (max-width: 768px) {
+        body {
+          touch-action: pan-y pinch-zoom;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- FIXED: Better script to prevent excessive zoom but allow scrolling -->
+    <script>
+      // Only prevent zoom when multiple fingers are detected
+      let lastTouchEnd = 0;
+      let scale = 1;
+      
+      document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+      
+      document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+      
+      // Prevent double-tap zoom
+      document.addEventListener('dblclick', function(event) {
+        event.preventDefault();
+      }, { passive: false });
+      
+      // Allow normal scrolling - REMOVE the problematic touchmove listener
+      // document.addEventListener('touchmove', function (event) {
+      //   if (event.scale !== 1) { event.preventDefault(); }
+      // }, { passive: false });
+      
+      document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+        // Optionally limit maximum scale
+        if (scale > 2) {
+          e.preventDefault();
+        }
+      });
+      
+      // Ensure body is scrollable
+      document.body.style.overflowY = 'auto';
+      document.body.style.webkitOverflowScrolling = 'touch';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors - La Roza Nature Resort */
+    --earth-brown: 5 22% 33%;
+    --teal-accent: 191 62% 56%;
+    --teal-light: 191 62% 70%;
+    --teal-dark: 191 62% 45%;
+    
+    /* Natural Wood Tones */
+    --wood-cream: 35 30% 96%;
+    --wood-light: 30 25% 92%;
+    --wood-warm: 28 20% 85%;
+    --wood-medium: 25 18% 70%;
+    --wood-dark: 20 15% 25%;
+    
+    /* Semantic Colors */
+    --background: 35 30% 98%;
+    --foreground: 20 15% 15%;
+    
+    --card: 35 30% 96%;
+    --card-foreground: 20 15% 15%;
+    
+    --popover: 35 30% 98%;
+    --popover-foreground: 20 15% 15%;
+    
+    --primary: 5 22% 33%;
+    --primary-foreground: 35 30% 98%;
+    
+    --secondary: 191 62% 56%;
+    --secondary-foreground: 35 30% 98%;
+    
+    --muted: 30 15% 90%;
+    --muted-foreground: 20 10% 45%;
+    
+    --accent: 191 62% 56%;
+    --accent-foreground: 35 30% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 191 62% 56%;
+    
+    --radius: 0.5rem;
+    
+    --sidebar-background: 35 30% 96%;
+    --sidebar-foreground: 20 15% 25%;
+    --sidebar-primary: 5 22% 33%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 191 62% 56%;
+    --sidebar-accent-foreground: 35 30% 98%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 191 62% 56%;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 35 30% 95%;
+    
+    --card: 20 15% 14%;
+    --card-foreground: 35 30% 95%;
+    
+    --popover: 20 15% 12%;
+    --popover-foreground: 35 30% 95%;
+    
+    --primary: 5 22% 45%;
+    --primary-foreground: 35 30% 98%;
+    
+    --secondary: 191 62% 50%;
+    --secondary-foreground: 35 30% 98%;
+    
+    --muted: 20 15% 20%;
+    --muted-foreground: 30 15% 65%;
+    
+    --accent: 191 62% 50%;
+    --accent-foreground: 35 30% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 30% 98%;
+    
+    --border: 20 15% 25%;
+    --input: 20 15% 25%;
+    --ring: 191 62% 50%;
+    
+    --sidebar-background: 20 15% 12%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 5 22% 45%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 191 62% 50%;
+    --sidebar-accent-foreground: 35 30% 98%;
+    --sidebar-border: 20 15% 25%;
+    --sidebar-ring: 191 62% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .heading-display {
+    font-family: 'Fraunces', serif;
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium leading-tight;
+  }
+  
+  .heading-section {
+    font-family: 'Fraunces', serif;
+    @apply text-3xl md:text-4xl font-medium;
+  }
+  
+  .heading-card {
+    font-family: 'Fraunces', serif;
+    @apply text-xl md:text-2xl font-medium;
+  }
+  
+  .text-elegant {
+    font-family: 'Fraunces', serif;
+    @apply text-lg md:text-xl italic font-light;
+  }
+  
+  .text-body {
+    font-family: 'Source Sans 3', sans-serif;
+    @apply text-base font-light leading-relaxed;
+  }
+  
+  .text-label {
+    font-family: 'Source Sans 3', sans-serif;
+    @apply text-xs uppercase tracking-[0.2em] font-medium;
+  }
+  
+  /* Card Styles */
+  .card-luxury {
+    @apply bg-card rounded-lg overflow-hidden;
+    box-shadow: 0 8px 30px -8px hsl(20 15% 15% / 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-luxury:hover {
+    box-shadow: 0 20px 50px -15px hsl(20 15% 15% / 0.2);
+    transform: translateY(-4px);
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-sm font-medium tracking-wide;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-3 rounded-sm font-medium tracking-wide;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-secondary/90;
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-8 py-3 rounded-sm font-medium tracking-wide bg-transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .btn-hero {
+    @apply border-2 border-wood-cream/80 text-wood-cream bg-transparent px-8 py-3 rounded-sm font-medium tracking-wide;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-hero:hover {
+    @apply bg-wood-cream/20;
+    transform: translateY(-2px);
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32 px-4 md:px-8;
+  }
+  
+  .container-luxury {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Decorative Elements */
+  .divider-elegant {
+    @apply w-20 h-0.5 bg-secondary mx-auto;
+  }
+  
+  .divider-gold {
+    @apply w-16 h-px bg-primary/40;
+  }
+  
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Image Overlays */
+  .image-overlay {
+    @apply relative;
+  }
+  
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent;
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
