@@ -13,6 +13,7 @@ const BOOKING_STYLES = [
   "https://reservations.reserveport.com/static/css/app.css",
   "https://www.reserveport.com/media/api5/bootstrap.min.css",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css",
+  "http://bookings.reserveport.com/reservations/laroza/booking.css"
 ];
 
 
@@ -49,12 +50,6 @@ const BookingWidget = () => {
       #booking-widget .notify-container h4.notify-title,
       #booking-widget .notify-text span.timerspan,
       #modalbookingForm .modal-header { color: #fff !important; }
-      #booking-widget a:hover,
-      #booking-widget .show-cp:hover,
-      #booking-widget .vue-show-details:hover,
-      #booking-widget .vue-show-tc:hover,
-      #vue-havepromo.vue-horizontal,
-      #booking-widget h1.room-title:hover { color: #000; }
     `;
     document.head.appendChild(style);
 
@@ -77,7 +72,7 @@ const BookingWidget = () => {
   return (
     <>
       {/* @ts-ignore */}
-      <booking-widget id="2287"></booking-widget>
+      <booking-widget id="2325"></booking-widget>
     </>
   );
 };
